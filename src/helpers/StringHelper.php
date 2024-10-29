@@ -17,7 +17,15 @@ class StringHelper extends \craft\helpers\StringHelper
 
   static public function sanitizeAttributes($attrs) {
     foreach ($attrs as $attr => $value) {
-      $attrs[$attr] = str_replace('\n', '', trim($value));
+      if (is_array($value)) {
+        foreach ($value as $k => $v) {
+          $value[$k] = str_replace('\n', '', trim($v));
+        }
+
+        $attrs[$attr] = array_filter($value);
+      } else {
+        $attrs[$attr] = str_replace('\n', '', trim($value));
+      }
     }
     return $attrs;
   }
