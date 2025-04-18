@@ -6,7 +6,7 @@
   "require": {
     "php": "^8.2",
     "craftcms/cms": "^5.1.3",
-    "sebastianlenz/craft-utils": "^4.0.0-beta"
+    "yournextagency/craft-utils": "^5.0.0"
   },
   "require-dev": {
     "craftcms/feed-me": "^6.1.0",
@@ -36,5 +36,11 @@
       "craftcms/plugin-installer": true
     }
   },
-  "minimum-stability": "dev"
+  "minimum-stability": "dev",
+  "repositories" : {
+    "yournextagency/craft-utils": {
+      "type": "git",
+      "url": "git@github.com:yournextagency/craft-utils.git"
+    }
+  }
 }
